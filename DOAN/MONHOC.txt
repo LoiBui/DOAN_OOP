@@ -1,0 +1,5 @@
+TRR|Toan Roi Rac|3
+LTDT|Ly Thuyet Do Thi|2
+Automat|Automat Va Ngon Ngu Hinh Thuc|2
+OOP|Lap Trinh Huong Doi Tuong|3
+KTLT|Ky Thuat Lap Trinh|2
