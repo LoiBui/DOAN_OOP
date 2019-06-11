@@ -34,5 +34,9 @@ public:
 	void ThemDiemChoSinhVien();
 	void SuaDiemChoSinhVien();
 	void XoaDiemChoSinhVien();
+
+
+	//HIEN THI
+	void XemDiemTheoMonHoc();
 };
 

@@ -384,3 +384,95 @@ void QuanLy::XoaDiemChoSinhVien(){
 	}
 	this->_GhiSinhVienVaoFile();
 }
+
+
+//HIEN THI
+void QuanLy::XemDiemTheoMonHoc(){
+	int y = whereY();
+	gotoXY(90, y); for (int i = 0; i < 28; i++) { TextCL(9, "="); }
+	gotoXY(90, y + 1);
+	TextCL(9, "|");
+	cout << setw(3) << left;
+	TextCL(9, "STT");
+	TextCL(9, "|");
+	cout << setw(8) << left;
+	TextCL(9, "MaMH");
+	TextCL(9, "|");
+	cout << setw(10) << left;
+	TextCL(9, "TenMH"); 
+	gotoXY(117, y + 1); TextCL(9, "|");
+	gotoXY(90, y + 2); for (int i = 0; i < 28; i++) { TextCL(9, "="); }
+	cout << endl;
+	for (int i = 0; i < this->DSMH.size(); i++)
+	{
+		gotoXY(90, y + 3 + i);
+		TextCL(9, "|");
+		cout << setw(3) << left;
+		TextCL(9,to_string(i+1));
+		TextCL(9, "|");
+		cout << setw(8) << left;
+		TextCL(9, this->DSMH[i]._Get_MaMH());
+		TextCL(9, "|");
+		cout << setw(10) << left;
+		TextCL(9, CatString(this->DSMH[i]._Get_TenMH(), 10));
+		gotoXY(117, y + 3 + i); TextCL(9, "|");
+	}
+	gotoXY(90, y + 3 + this->DSMH.size()); for (int i = 0; i < 28; i++) { TextCL(9, "="); }
+	
+
+	gotoXY(0, y);
+	string MaMH = this->NhapMaMonHoc(1);
+
+
+	
+
+
+
+
+
+	TextCL(257, "\nDanh Sach Diem Cua MonHoc: ");
+	TextCL(287, MaMH + "\n");
+	
+	for (int i = 0; i < 25; i++){ cout << "==="; } cout << "===" << endl;
+	cout << "|" << setw(3) << left;
+	TextCL(9, "STT");
+	cout << "|" << setw(8) << left;
+	TextCL(9, "MSSV");
+	cout << "|" << setw(19) << left;
+	TextCL(9, "TenSV");
+	cout << "|" << setw(12) << left;
+	TextCL(9, "NgaySinh");
+	cout << "|" << setw(6) << left;
+	TextCL(9, "LopQL");
+	cout << "|" << setw(5) << left;
+	TextCL(9, "DQT");
+	cout << "|" << setw(5) << left;
+	TextCL(9, "DKT");
+	cout << "|" << setw(5) << left;
+	TextCL(9, "DC");
+	cout << "|" << setw(5) << left;
+	TextCL(9, "(4)"); cout << "|";
+	cout << endl; for (int i = 0; i < 25; i++){ cout << "==="; } cout << "===" << endl;
+
+	int stt = 1;
+	for each (SinhVien item in this->DSSV)
+	{
+		Diem d;
+		bool check = false;
+		for each(Diem i in item._Get_DiemThi()){
+			if (i._Get_MaMH() == MaMH){
+				d = i;
+				check = true;
+				break;
+			}
+		}
+		if (check){
+			cout << "|" << setw(3) << left << stt++ << "|" << setw(8) << left << item._Get_MSSV() << "|" << setw(19) << left << item._Get_TenSV() << "|" << setw(12) << left << item._Get_NgaySinh();
+			cout << "|" << setw(6) << left << item._Get_Lop() << "|" << setw(5) << left << d._Get_DiemQT();
+			cout << "|" << setw(5) << left << d._Get_DiemKT() << "|" << setw(5) << left << d.TinhDiemChu() << "|" << setw(5) << left << d.TinhDiemHe4();
+			gotoXY(77, whereY()); cout << "|";
+			cout << endl;
+		}
+	}
+	for (int i = 0; i < 25; i++){ cout << "==="; } cout << "===" << endl;
+}

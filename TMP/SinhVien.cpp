@@ -186,7 +186,9 @@ void SinhVien::SuaDiem(){
 	bool ktmmh = true;
 	cout << "\nNhap vao MaMH: ";
 	nhaplai:
+	TextColor(MauChu);
 	getline(cin, MaMH);
+	TextColor(7);
 	for (int i = 0; i < this->DiemThi.size(); i++)
 	{
 		if (this->DiemThi[i]._Get_MaMH() == MaMH){
@@ -216,7 +218,7 @@ void SinhVien::SuaDiem(){
 		}
 	}
 	if (ktmmh){
-		cout << "\nMaMonHoc khong ton tai.";
+		TextCL(4, "	[MaMonHoc khong ton tai.]");
 		cout << "\nNhap Lai: ";
 		goto nhaplai;
 	}
@@ -284,8 +286,10 @@ void SinhVien::XoaDiem(){
 	string MaMH;
 	bool ktmmh = true;
 	cout << "\nNhap vao MaMH de xoa: ";
-nhaplai:
+	nhaplai:
+	TextColor(MauChu);
 	getline(cin, MaMH);
+	TextColor(7);
 	for (int i = 0; i < this->DiemThi.size(); i++)
 	{
 		if (this->DiemThi[i]._Get_MaMH() == MaMH){
@@ -295,7 +299,7 @@ nhaplai:
 		}
 	}
 	if (ktmmh){
-		cout << "\nMaMonHoc khong ton tai.";
+		TextCL(4, "	[MaMonHoc khong ton tai.]");
 		cout << "\nNhap Lai: ";
 		goto nhaplai;
 	}
