@@ -41,5 +41,6 @@ public:
 	void XemDiemTheoLopHoc();
 	vector<string> GetVaHienThiDanhSachLop();
 	void XemChiTietDiem1SinhVien();
+	void LietKeSinhVienTruotMonTheoMonHoc();
 };
 

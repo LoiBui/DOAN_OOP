@@ -142,11 +142,25 @@ int menu(){
 
 	gotoXY(25, 14);
 	TextCL(3, "|");
-	cout << setw(4) << left << "10";
+	cout << setw(4) << left << "12";
 	TextCL(3, "|");
 	cout << setw(23) << left << "	Chi Tiet Diem Cua 1 Sinh Vien";
 	gotoXY(62, 14); TextCL(3, "|");
 
+
+	gotoXY(62, 12);
+	TextCL(3, "|");
+	cout << setw(4) << left << "13";
+	TextCL(3, "|");
+	cout << setw(23) << left << " Liet Ke Sinh Vien Truot Mon";
+	gotoXY(96, 12); TextCL(3, "|");
+
+	gotoXY(62, 13);
+	TextCL(3, "|");
+	cout << setw(4) << left << "14";
+	TextCL(3, "|");
+	cout << setw(23) << left << " DS Sinh Vien Va Mon Hoc";
+	gotoXY(96, 13); TextCL(3, "|");
 
 	
 	gotoXY(25, 15);for (int i = 0; i < 72; i++) { TextCL(3, "="); }
@@ -270,6 +284,22 @@ void LuaChon(){
 		cout << "\n	+Nhap MSSV cua SinhVien can them.";
 		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
 		ql.XemChiTietDiem1SinhVien();
+		break;
+
+	case 13:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.LietKeSinhVienTruotMonTheoMonHoc();
+		break;
+
+	case 14:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.LietKeSinhVienTruotMonTheoMonHoc();
 		break;
 	default:
 		break;

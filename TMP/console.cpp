@@ -7,7 +7,7 @@ void NoType(bool tmp){
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &inffo);
 }
 
-
+//
 
 //-------------------------Screen-------------------------
 void clrscr()

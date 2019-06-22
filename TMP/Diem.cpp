@@ -125,8 +125,7 @@ string Diem::TinhDiemChu(){
 	return "F";
 }
 
-string Diem::XepLoai(){
-	float Diem = this->TinhDiemHe4();
+string Diem::XepLoai(float Diem){
 	if (Diem == 0) {
 		return "Yeu";
 	}
@@ -144,19 +143,40 @@ string Diem::XepLoai(){
 
 string Diem::GetTenMonHoc(){
 	string s;
+	
 	MonHoc::FileIn.close();
 	MonHoc::FileIn.open("MONHOC.txt", ios_base::in);
 	while (!MonHoc::FileIn.eof()){
 		getline(MonHoc::FileIn, s, '|');
 		if (MaMH == s){
 			getline(MonHoc::FileIn, s, '|');
-			break;
+			return s;
 		}
 		getline(MonHoc::FileIn, s);
 	}
 	MonHoc::FileIn.close();
 	MonHoc::FileIn.open("MONHOC.txt", ios_base::in);
-	return s;
+	
+	return "Mon Hoc Nay Da Bi Xoa";
+}
+
+int Diem::GetSoTinChi(){
+	string s;
+	MonHoc::FileIn.close();
+	MonHoc::FileIn.open("MONHOC.txt", ios_base::in);
+	while (!MonHoc::FileIn.eof()){
+		getline(MonHoc::FileIn, s, '|');
+		if (MaMH == s){
+			getline(MonHoc::FileIn, s, '|');
+			int stc;
+			MonHoc::FileIn >> stc;
+			return stc;
+		}
+		getline(MonHoc::FileIn, s);
+	}
+	MonHoc::FileIn.close();
+	MonHoc::FileIn.open("MONHOC.txt", ios_base::in);
+	return 0;
 }
 //////////GET - SET//////////
 string Diem::_Get_MaMH()

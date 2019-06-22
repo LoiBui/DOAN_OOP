@@ -16,8 +16,9 @@ public:
 
 	float TinhDiemHe4();
 	string TinhDiemChu();
-	string XepLoai();
+	static string XepLoai(float);
 	string GetTenMonHoc();
+	int GetSoTinChi();
 	///////GET- SET//////
 	string _Get_MaMH();
 	float _Get_DiemKT();
