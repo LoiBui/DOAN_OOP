@@ -38,5 +38,8 @@ public:
 
 	//HIEN THI
 	void XemDiemTheoMonHoc();
+	void XemDiemTheoLopHoc();
+	vector<string> GetVaHienThiDanhSachLop();
+	void XemChiTietDiem1SinhVien();
 };
 

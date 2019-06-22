@@ -153,7 +153,7 @@ int menu(){
 	cout << endl;
 	
 	cout << "\nLua Chon: ";
-	int choose = TryCatch(0, 10);
+	int choose = TryCatch(0, 15);
 
 	NoType(false); gotoXY(0, 17);
 	for (int i = 0; i < 15; i++)
@@ -208,6 +208,69 @@ void LuaChon(){
 		ql.SuaSinhVien();
 		break;
 
+	case 5:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.SuaMonHoc();
+		break;
+
+	case 6:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.SuaDiemChoSinhVien();
+		break;
+
+	case 7:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.XoaSinhVien();
+		break;
+
+	case 8:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.XoaMonHoc();
+		break;
+
+	case 9:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.XoaDiemChoSinhVien();
+		break;
+
+	case 10:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.XemDiemTheoMonHoc();
+		break;
+
+	case 11:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.XemDiemTheoLopHoc();
+		break;
+
+	case 12:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.XemChiTietDiem1SinhVien();
+		break;
 	default:
 		break;
 	}
