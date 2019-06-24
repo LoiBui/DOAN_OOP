@@ -23,7 +23,7 @@ public:
 	void XoaMonHoc();
 	void ThemMonHoc();
 	void SuaMonHoc();
-
+	void DanhSachMonHoc();
 
 	//SINH VIEEN
 	void ThemSinhVien();
@@ -34,6 +34,7 @@ public:
 	void ThemDiemChoSinhVien();
 	void SuaDiemChoSinhVien();
 	void XoaDiemChoSinhVien();
+	void DanhSachSinhVien();
 
 
 	//HIEN THI
@@ -42,5 +43,6 @@ public:
 	vector<string> GetVaHienThiDanhSachLop();
 	void XemChiTietDiem1SinhVien();
 	void LietKeSinhVienTruotMonTheoMonHoc();
+	void DanhSachMonHocVaSinhVien();
 };
 

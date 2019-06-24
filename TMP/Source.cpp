@@ -311,7 +311,7 @@ void LuaChon(){
 		cout << "HUONG DAN: ";
 		cout << "\n	+Nhap MSSV cua SinhVien can them.";
 		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
-		ql.LietKeSinhVienTruotMonTheoMonHoc();
+		ql.DanhSachMonHocVaSinhVien();
 		break;
 	default:
 		break;

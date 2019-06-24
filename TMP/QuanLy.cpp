@@ -760,3 +760,134 @@ void QuanLy::LietKeSinhVienTruotMonTheoMonHoc(){
 	}
 	for (int i = 0; i < 25; i++){ cout << "==="; } cout << "===" << endl;
 }
+
+
+void QuanLy::DanhSachMonHoc(){
+	int x = whereX();
+	int y = whereY();
+
+	int _pc = 0;
+	
+	TextColor(287); gotoXY(50, y); cout << " DANH SACH CAC MON HOC "; TextColor(15);
+	gotoXY(20, y + 1); for (int i = 0; i < 25; i++){ cout << "==="; } cout << "=="; int getX = whereX(); cout << endl;
+	gotoXY(20, y + 2); cout << "|" << setw(7) << left;
+	TextColor(9);
+	cout << "STT";
+	TextColor(15);
+	cout << "|" << setw(10) << left;
+	TextColor(9);
+	cout << "MaMH";
+	TextColor(15);
+	cout << "|" << setw(50) << left;
+	TextColor(9);
+	cout << "TenMH";
+	TextColor(15);
+	cout << "|" << setw(5) << left;
+	TextColor(9);
+	cout << "STC";
+	TextColor(15);
+	cout << "|";
+	TextColor(15);
+
+	gotoXY(20, y + 3); for (int i = 0; i < 25; i++){ cout << "==="; } cout << "=="; cout << endl;
+
+	int i = 0;
+	for each (MonHoc item in this->DSMH)
+	{
+		gotoXY(20, y + i + 4); cout << "|" << setw(7) << left << i + 1 << "|" << setw(10) << left << item._Get_MaMH() << "|" << setw(50) << left << CatString(item._Get_TenMH(), 47) << "|" << setw(5) << left << item._Get_SoTC() << "|"; //fix lỗi dòng kẻ
+		while (true)
+		{
+			if (getX == whereX()){
+				break;
+			}
+			cout << " ";
+		}
+
+		i++;
+	}
+	if (this->DSMH.size() > 0){
+		gotoXY(20, y + i + 4); for (int i = 0; i < 25; i++){ cout << "==="; } cout << "=="; cout << endl;
+	}
+
+	
+}
+
+void QuanLy::DanhSachSinhVien(){
+
+	int x = whereX();
+	int y = whereY();
+	gotoXY(68, 0); TextColor(287); cout << " DANH SACH SINH VIEN TOAN TRUONG "; TextColor(15);
+	int _sp = y + 2;
+	gotoXY(10, _sp);  for (int i = 0; i < 24; i++){ cout << "===="; } cout << endl;
+	// STT MSSV HOTEN LOP NGAYSINH DIACHI DIEMTB
+	//show header
+	gotoXY(10, _sp + 1); cout << "|" << setw(4) << left;
+	TextCL(9, "STT");
+	cout << "|" << setw(7) << left;
+	TextCL(9, "MSSV");
+	cout << "|" << setw(40) << left;
+	TextCL(9, "HoTen");
+	cout << "|" << setw(7) << left;
+	TextCL(9, "Lop");
+	cout << "|" << setw(11) << left;
+	TextCL(9, "NgaySinh");
+	cout << "|" << setw(7) << left;
+	TextCL(9, "DTB(4)");
+	cout << "|" << setw(7) << left;
+	TextCL(9, "XepLoai");
+
+
+	gotoXY(10, _sp + 2);  for (int i = 0; i < 24; i++){ cout << "===="; } cout << endl;
+	int index = 1;
+
+	for each (SinhVien item in this->DSSV)
+	{
+		gotoXY(10, _sp + 2 + index);
+		cout << "|" << setw(4) << left << index++;
+
+		cout << "|" << setw(7) << left << item._Get_MSSV() << "|" << setw(40) << left << item._Get_TenSV() << "|" << setw(7) << left << item._Get_Lop() << "|" << setw(11) << left << item._Get_NgaySinh();
+		if (item._Get_DiemThi().size() == 0){
+			cout << "|" << setw(7) << left << "Null" << "|" << setw(7) << left << "Null" << endl;
+		}
+		else{
+			float DiemTB = 0;
+			float x = 0;
+			for (int j = 0; j < item._Get_DiemThi().size(); j++){
+
+				if (item._Get_DiemThi()[j].TinhDiemHe4() != 0){
+					int tm = item._Get_DiemThi()[j].GetSoTinChi();
+					DiemTB += item._Get_DiemThi()[j].TinhDiemHe4()*tm;
+
+					x += tm;
+				}
+
+			}
+			DiemTB /= x;
+			cout << "|" << setw(7) << left << DiemTB * 0.4 << "|" << setw(7) << left << Diem::XepLoai(DiemTB) << endl;
+		}
+	}
+
+	gotoXY(10, _sp + 2 + index);  for (int i = 0; i < 24; i++){ cout << "===="; } cout << endl;
+
+	for (int i = 0; i < index + 1; i++){
+		gotoXY(117, i + _sp + 1);
+		if (i != 1) cout << "|";
+	}
+	cout << "\n";
+}
+void QuanLy::DanhSachMonHocVaSinhVien(){
+	cout << "\n ================================";
+	cout << "\n| 1: Danh Sach Sinh Vien "; gotoXY(33, whereY()); cout << "|";
+	cout << "\n| 2: Danh Sach Mon Hoc: " ; gotoXY(33, whereY()); cout << "|";
+	cout << "\n| 0: Menu Chinh"; gotoXY(33, whereY()); cout << "|";
+	cout << "\n ================================\n\n";
+
+	cout << "Nhap Vao Lua Chon Cua Ban :";
+	int LuaChon = DOWHILE2(0, 2, "Du Lieu Nhap Khong Hop Le. Xin Kiem Tra Lai!!! ");
+	if (LuaChon == 2){
+		this->DanhSachMonHoc();
+	}
+	else if (LuaChon == 1){
+		this->DanhSachSinhVien();
+	}
+}
