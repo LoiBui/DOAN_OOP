@@ -173,6 +173,9 @@ int menu(){
 	gotoXY(25, 15);for (int i = 0; i < 72; i++) { TextCL(3, "="); }
 	cout << endl;
 	
+	gotoXY(0, 17); for (int i = 0; i < 120; i++) { TextCL(63, "="); }
+	cout << endl;
+
 	cout << "\nLua Chon: ";
 	int choose = TryCatch(0, 15);
 
@@ -193,7 +196,8 @@ void LuaChon(){
 	ql.initDSSV();
 	ql.initDSMH();
 	
-
+tieptuc:
+	system("cls");
 	int LuaChon = menu();
 	switch (LuaChon)
 	{
@@ -316,7 +320,10 @@ void LuaChon(){
 	default:
 		break;
 	}
-
+	string LuaChon1 = DOWHILEYESNO("Ban Co Muon Tiep Tuc Khong? (Y/n): ");
+	if (LuaChon1 == "y" || LuaChon1 == "Y"){
+		goto tieptuc;
+	}
 }
 int main(){
 	
