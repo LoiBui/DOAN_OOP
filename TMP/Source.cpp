@@ -162,6 +162,13 @@ int menu(){
 	cout << setw(23) << left << " DS Sinh Vien Va Mon Hoc";
 	gotoXY(96, 13); TextCL(3, "|");
 
+	gotoXY(62, 14);
+	TextCL(3, "|");
+	cout << setw(4) << left; TextCL(4, "0");
+	TextCL(3, "|");
+	cout << setw(23) << left; TextCL(4, " Thoat");
+	gotoXY(96, 14); TextCL(3, "|");
+
 	
 	gotoXY(25, 15);for (int i = 0; i < 72; i++) { TextCL(3, "="); }
 	cout << endl;
@@ -190,6 +197,11 @@ void LuaChon(){
 	int LuaChon = menu();
 	switch (LuaChon)
 	{
+	case 0:
+		system("pause");
+		exit(0);
+		break;
+
 	case 1:
 		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "THEM 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "----"); cout << endl;
 		cout << "HUONG DAN: ";
