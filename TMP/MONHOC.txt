@@ -3,7 +3,7 @@ LTDT|Ly Thuyet Do Thi|2
 Automat|Automat Va Ngon Ngu Hinh Thuc|2
 OOP|Lap Trinh Huong Doi Tuong|3
 KTLT|Ky Thuat Lap Trinh|2
-LOI|LOI BUI CONG|4
-5555|EEE|4
-LOILLLL|LOI BUI CONG|5
-TRR1|DAS DSADASDAS|3
+VXL1|Vi Xu Ly 1|3
+VXL2|Vi Xu Ly 2|2
+THTH1|Thuc Hanh Tin Hoc 1|3
+THTH2|Thuc Hanh Tin Hoc 2|2

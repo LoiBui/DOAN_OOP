@@ -80,7 +80,7 @@ int menu(){
 
 
 	gotoXY(87, 1);
-	for (int i = 0; i < 28; i++) { if (i == 14){ cout << " "; TextCL(31, "THEM"); cout << " "; } else{ TextCL(3, "="); } }
+	for (int i = 0; i < 28; i++) { if (i == 14){ cout << " "; TextCL(31, "XOA"); cout << " "; } else{ TextCL(3, "="); } }TextCL(3, "=");
 	TextColor(3);
 	gotoXY(87, 2); cout << "|" << setw(4) << left << "Key";
 	cout << "|" << setw(23) << left << " Noi Dung";
@@ -111,72 +111,106 @@ int menu(){
 	gotoXY(87, 7); for (int i = 0; i < 33; i++) { TextCL(3, "="); }
 
 
-	gotoXY(25, 9);
+
+	gotoXY(5, 9);
 	for (int i = 0; i < 63; i++) { if (i == 32){ cout << " "; TextCL(31, "HIEN THI"); cout << " "; } else{ TextCL(3, "="); } }
 	TextColor(3);
-	gotoXY(25, 10); cout << "|" << setw(4) << left << "Key";
+	gotoXY(5, 10); cout << "|" << setw(4) << left << "Key";
 	cout << "|" << setw(23) << left << " Noi Dung";
 	gotoXY(62, 10); cout << "|";
 
-	gotoXY(62, 10); cout << "|" << setw(4) << left << "Key";
+	gotoXY(42, 10); cout << "|" << setw(4) << left << "Key";
 	cout << "|" << setw(23) << left << " Noi Dung";
-	gotoXY(96, 10); cout << "|";
+	gotoXY(76, 10); cout << "|";
 
-	gotoXY(25, 11);
+	gotoXY(5, 11);
 	for (int i = 0; i < 72; i++) { TextCL(3, "="); }
 
 	////////////////////
-	gotoXY(25, 12);
+	gotoXY(5, 12);
 	TextCL(3, "|");
 	cout << setw(4) << left << "10";
 	TextCL(3, "|");
-	cout << setw(23) << left << "	Xem Diem Theo Mon Hoc";
+	cout << setw(23) << left << " Xem Diem Theo Mon Hoc";
 	gotoXY(62, 12); TextCL(3, "|");
 
-	gotoXY(25, 13);
+	gotoXY(5, 13);
 	TextCL(3, "|");
 	cout << setw(4) << left << "11";
 	TextCL(3, "|");
-	cout << setw(23) << left << "	Xem Diem Theo Lop Hoc";
+	cout << setw(23) << left << " Xem Diem Theo Lop Hoc";
 	gotoXY(62, 13); TextCL(3, "|");
 
-	gotoXY(25, 14);
+	gotoXY(5, 14);
 	TextCL(3, "|");
 	cout << setw(4) << left << "12";
 	TextCL(3, "|");
-	cout << setw(23) << left << "	Chi Tiet Diem Cua 1 Sinh Vien";
+	cout << setw(23) << left << " Chi Tiet Diem Cua 1 Sinh Vien";
 	gotoXY(62, 14); TextCL(3, "|");
 
 
-	gotoXY(62, 12);
+	gotoXY(42, 12);
 	TextCL(3, "|");
 	cout << setw(4) << left << "13";
 	TextCL(3, "|");
 	cout << setw(23) << left << " Liet Ke Sinh Vien Truot Mon";
-	gotoXY(96, 12); TextCL(3, "|");
+	gotoXY(76, 12); TextCL(3, "|");
 
-	gotoXY(62, 13);
+	gotoXY(42, 13);
 	TextCL(3, "|");
 	cout << setw(4) << left << "14";
 	TextCL(3, "|");
 	cout << setw(23) << left << " DS Sinh Vien Va Mon Hoc";
-	gotoXY(96, 13); TextCL(3, "|");
+	gotoXY(76, 13); TextCL(3, "|");
 
-	gotoXY(62, 14);
+	gotoXY(42, 14);
 	TextCL(3, "|");
-	cout << setw(4) << left; TextCL(4, "0");
+	cout << setw(4) << left << "15";
 	TextCL(3, "|");
-	cout << setw(23) << left; TextCL(4, " Thoat");
-	gotoXY(96, 14); TextCL(3, "|");
+	cout << setw(23) << left << " SV Du Dieu Kien Dat HB";
+	gotoXY(76, 14); TextCL(3, "|");
 
-	
-	gotoXY(25, 15);for (int i = 0; i < 72; i++) { TextCL(3, "="); }
+
+	gotoXY(5, 15); for (int i = 0; i < 72; i++) { TextCL(3, "="); }
 	cout << endl;
 	
 	gotoXY(0, 17); for (int i = 0; i < 120; i++) { TextCL(63, "="); }
 	cout << endl;
+	/////////////////////////////////////
 
-	cout << "\nLua Chon: ";
+	gotoXY(87, 9);
+	for (int i = 0; i < 29; i++) { if (i == 14){ cout << " "; TextCL(31, "SUA"); cout << " "; } else{ TextCL(3, "="); } }
+	TextColor(3);
+	gotoXY(87, 10); cout << "|" << setw(4) << left << "Key";
+	cout << "|" << setw(23) << left << " Noi Dung";
+	gotoXY(119, 10); cout << "|";
+	gotoXY(87, 11);
+	for (int i = 0; i < 33; i++) { TextCL(3, "="); }
+
+	gotoXY(87, 12);
+	TextCL(3, "|");
+	cout << setw(4) << left << "16";
+	TextCL(3, "|");
+	cout << setw(23) << left << " Sua Sinh Vien";
+	gotoXY(119, 12); TextCL(3, "|");
+
+	gotoXY(87, 13);
+	TextCL(3, "|");
+	cout << setw(4) << left << "5";
+	TextCL(3, "|");
+	cout << setw(23) << left << " Sua Mon Hoc";
+	gotoXY(119, 13); TextCL(3, "|");
+
+	gotoXY(87, 14);
+	TextCL(3, "|");
+	cout << setw(4) << left << "6";
+	TextCL(3, "|");
+	cout << setw(23) << left << " Sua Diem Cho Sinh Vien";
+	gotoXY(119, 14); TextCL(3, "|");
+	gotoXY(87, 15); for (int i = 0; i < 33; i++) { TextCL(3, "="); }
+
+
+	cout << "\n\n\n\nLua Chon: ";
 	int choose = TryCatch(0, 15);
 
 	NoType(false); gotoXY(0, 17);
@@ -295,9 +329,9 @@ tieptuc:
 		break;
 
 	case 12:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		for (int i = 0; i < 24; i++) if (i == 13) TextCL(63, "CHI TIET DIEM MOT SINH VIEN"); else TextCL(63, "----"); cout << endl;
 		cout << "HUONG DAN: ";
-		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		cout << "\n	+Nhap MSSV cua SinhVien can Xem.";
 		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
 		ql.XemChiTietDiem1SinhVien();
 		break;
@@ -317,10 +351,19 @@ tieptuc:
 		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
 		ql.DanhSachMonHocVaSinhVien();
 		break;
+
+	case 15:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		TextCL(9, "\nDieu Kien Dat Hoc Bong: ");
+		cout << "\n+ So Tin Chi Phai Tren 15 Tin Chi";
+		cout << "\n+ Diem Trung Binh Mon Phai Lon Hon D+";
+		cout << "\n+ Diem Trung Binh Phai >= 2.5";
+		ql.DanhSachSinhVienDuDieuKienDatHocBong();
+		break;
 	default:
 		break;
 	}
-	string LuaChon1 = DOWHILEYESNO("Ban Co Muon Tiep Tuc Khong? (Y/n): ");
+	string LuaChon1 = DOWHILEYESNO("\nBan Co Muon Tiep Tuc Khong? (Y/n): ");
 	if (LuaChon1 == "y" || LuaChon1 == "Y"){
 		goto tieptuc;
 	}

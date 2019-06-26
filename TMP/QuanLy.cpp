@@ -658,6 +658,7 @@ void QuanLy::XemChiTietDiem1SinhVien(){
 			}
 			else{
 				TextCL(268, "	[SINH VIEN NAY KHONG CO DIEM DE HIEN THI]");
+				return;
 			}
 			///////////////end
 			break;
@@ -668,6 +669,7 @@ void QuanLy::XemChiTietDiem1SinhVien(){
 	TextCL(257, "\nDiem Trung Binh He 4: "); TextCL(15, to_string(diemtrungbinhhe4 / stcdat));
 	TextCL(257, "\nSo Tin Chi Tich Luy: "); TextCL(15, to_string(stcdat));
 	TextCL(257, "\nXep Loai: "); TextCL(15, Diem::XepLoai(diemtrungbinhhe4 / stcdat));
+	cout << endl;
 }
 
 
@@ -706,11 +708,6 @@ void QuanLy::LietKeSinhVienTruotMonTheoMonHoc(){
 
 	gotoXY(0, y);
 	string MaMH = this->NhapMaMonHoc(1);
-
-
-
-
-
 
 
 
@@ -847,7 +844,7 @@ void QuanLy::DanhSachSinhVien(){
 
 		cout << "|" << setw(7) << left << item._Get_MSSV() << "|" << setw(40) << left << item._Get_TenSV() << "|" << setw(7) << left << item._Get_Lop() << "|" << setw(11) << left << item._Get_NgaySinh();
 		if (item._Get_DiemThi().size() == 0){
-			cout << "|" << setw(7) << left << "Null" << "|" << setw(7) << left << "Null" << endl;
+			cout << "|" << setw(7) << left << "K Co" << "|" << setw(7) << left << "K Co" << endl;
 		}
 		else{
 			float DiemTB = 0;
@@ -862,15 +859,21 @@ void QuanLy::DanhSachSinhVien(){
 				}
 
 			}
-			DiemTB /= x;
-			cout << "|" << setw(7) << left << DiemTB * 0.4 << "|" << setw(7) << left << Diem::XepLoai(DiemTB) << endl;
+			if (x != 0){
+				DiemTB /= x;
+			}
+			else{
+				DiemTB = 0;
+			}
+			
+			cout << "|" << setw(7) << left << DiemTB << "|" << setw(7) << left << Diem::XepLoai(DiemTB) << endl;
 		}
 	}
 
 	gotoXY(10, _sp + 2 + index);  for (int i = 0; i < 24; i++){ cout << "===="; } cout << endl;
 
 	for (int i = 0; i < index + 1; i++){
-		gotoXY(117, i + _sp + 1);
+		gotoXY(105, i + _sp + 1);
 		if (i != 1) cout << "|";
 	}
 	cout << "\n";
@@ -883,11 +886,79 @@ void QuanLy::DanhSachMonHocVaSinhVien(){
 	cout << "\n ================================\n\n";
 
 	cout << "Nhap Vao Lua Chon Cua Ban :";
-	int LuaChon = DOWHILE2(0, 2, "Du Lieu Nhap Khong Hop Le. Xin Kiem Tra Lai!!! ");
+	int LuaChon = TryCatch(0, 2);
 	if (LuaChon == 2){
 		this->DanhSachMonHoc();
 	}
 	else if (LuaChon == 1){
 		this->DanhSachSinhVien();
 	}
+}
+
+void QuanLy::DanhSachSinhVienDuDieuKienDatHocBong(){
+
+	cout << endl;
+	for (int i = 0; i < 24; i++){ cout << "===="; } cout << endl;
+	// STT MSSV HOTEN LOP NGAYSINH DIACHI DIEMTB
+	//show header
+	cout << "|" << setw(4) << left;
+	TextCL(9, "STT");
+	cout << "|" << setw(7) << left;
+	TextCL(9, "MSSV");
+	cout << "|" << setw(40) << left;
+	TextCL(9, "HoTen");
+	cout << "|" << setw(7) << left;
+	TextCL(9, "Lop");
+	cout << "|" << setw(11) << left;
+	TextCL(9, "NgaySinh");
+	cout << "|" << setw(7) << left;
+	TextCL(9, "DTB(4)");
+	cout << "|" << setw(7) << left;
+	TextCL(9, "XepLoai");
+
+	cout << endl;
+	for (int i = 0; i < 24; i++){ cout << "===="; } cout << endl;
+	int index = 1;
+
+	for each (SinhVien item in this->DSSV)
+	{
+		bool check = true;
+		float DiemTB = 0;
+		float x = 0;
+		for (int j = 0; j < item._Get_DiemThi().size(); j++){
+
+			if (item._Get_DiemThi()[j].TinhDiemHe4() != 0){
+				int tm = item._Get_DiemThi()[j].GetSoTinChi();
+				DiemTB += item._Get_DiemThi()[j].TinhDiemHe4()*tm;
+				x += tm;
+			}
+			if (item._Get_DiemThi()[j].TinhDiemHe4() == 0 || item._Get_DiemThi()[j].TinhDiemHe4() == 1 || item._Get_DiemThi()[j].TinhDiemHe4() == 1.5){
+				check = false;
+			}
+
+		}
+		
+		if (x != 0){
+			DiemTB /= x;
+		}
+		else{
+			DiemTB = 0;
+		}
+
+		if (!check || x < 15 || DiemTB < 2.5){
+			continue;
+		}
+		else{
+			cout << "|" << setw(4) << left << index++;
+			cout << "|" << setw(7) << left << item._Get_MSSV() << "|" << setw(40) << left << item._Get_TenSV() << "|" << setw(7) << left << item._Get_Lop() << "|" << setw(11) << left << item._Get_NgaySinh();
+			cout << "|" << setw(7) << left << DiemTB << "|" << setw(7) << left << Diem::XepLoai(DiemTB) << endl;
+		}
+		
+	}
+	for (int i = 0; i < 24; i++){ cout << "===="; } cout << endl;
+	for (int i = 0; i < index + 1; i++){
+		gotoXY(95, i + 24);
+		if (i != 1) cout << "|";
+	}
+	cout << endl << endl;
 }

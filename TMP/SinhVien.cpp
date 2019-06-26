@@ -65,9 +65,6 @@ void SinhVien::NhapDiem(){
 
 	while (true)
 	{
-		gotoXY(z, l);
-		//MonHoc::_ShowDSMH();
-		gotoXY(x, y + 1);
 		Diem d;
 		cin >> d;
 

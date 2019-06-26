@@ -44,5 +44,6 @@ public:
 	void XemChiTietDiem1SinhVien();
 	void LietKeSinhVienTruotMonTheoMonHoc();
 	void DanhSachMonHocVaSinhVien();
+	void DanhSachSinhVienDuDieuKienDatHocBong();
 };
 
