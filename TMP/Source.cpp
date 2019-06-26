@@ -2,11 +2,13 @@
 #include "MonHoc.h"
 #include "QuanLy.h"
 #include "SinhVien.h"
+#include "TruotMon.h"
 
 void _initialization(){
 	SetConsoleTitleW(L"Đồ Án OOP: Quản Lý Điểm Thi");
 	MonHoc::FileIn.open("MONHOC.txt", ios_base::in);
 	SinhVien::FileIn.open("DS_SINHVIEN.txt", ios_base::in);
+	TruotMon::FileIn.open("DS_TRUOT.txt", ios_base::in);
 }
 
 int menu(){
@@ -191,14 +193,15 @@ int menu(){
 	TextCL(3, "|");
 	cout << setw(4) << left << "16";
 	TextCL(3, "|");
-	cout << setw(23) << left << " Sua Sinh Vien";
+	cout << setw(23) << left << " Dang Ki Thi Lai, Hoc Lai";
 	gotoXY(119, 12); TextCL(3, "|");
+
 
 	gotoXY(87, 13);
 	TextCL(3, "|");
-	cout << setw(4) << left << "5";
+	cout << setw(4) << left << "17";
 	TextCL(3, "|");
-	cout << setw(23) << left << " Sua Mon Hoc";
+	cout << setw(23) << left << " DS Thi Lai, Hoc Lai";
 	gotoXY(119, 13); TextCL(3, "|");
 
 	gotoXY(87, 14);
@@ -211,7 +214,7 @@ int menu(){
 
 
 	cout << "\n\n\n\nLua Chon: ";
-	int choose = TryCatch(0, 15);
+	int choose = TryCatch(0, 20);
 
 	NoType(false); gotoXY(0, 17);
 	for (int i = 0; i < 15; i++)
@@ -229,6 +232,7 @@ void LuaChon(){
 	QuanLy ql;
 	ql.initDSSV();
 	ql.initDSMH();
+	ql.initTruotMon();
 	
 tieptuc:
 	system("cls");
@@ -359,6 +363,22 @@ tieptuc:
 		cout << "\n+ Diem Trung Binh Mon Phai Lon Hon D+";
 		cout << "\n+ Diem Trung Binh Phai >= 2.5";
 		ql.DanhSachSinhVienDuDieuKienDatHocBong();
+		break;
+
+	case 16:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.DangKiThiLaiorHocLai();
+		break;
+
+	case 17:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.DanhSachThiLaiorHocLai();
 		break;
 	default:
 		break;

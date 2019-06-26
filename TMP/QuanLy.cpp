@@ -11,6 +11,7 @@ QuanLy::~QuanLy()
 }
 
 
+
 //MOON HOCJ
 void QuanLy::_GhiMonHocVaoFile(){
 	MonHoc::FileOut.open("MONHOC.txt", ios_base::out);
@@ -961,4 +962,93 @@ void QuanLy::DanhSachSinhVienDuDieuKienDatHocBong(){
 		if (i != 1) cout << "|";
 	}
 	cout << endl << endl;
+}
+
+
+//TRUOT MON
+void QuanLy::initTruotMon(){
+	while (!TruotMon::FileIn.eof())
+	{
+		string MaSV, MaMH;
+		int type;
+
+		getline(TruotMon::FileIn, MaSV, '|');
+		getline(TruotMon::FileIn, MaMH, '|');
+		TruotMon::FileIn >> type;
+
+		TruotMon tm(MaSV, MaMH, type);
+		this->DSTM.push_back(tm);
+	}
+
+}
+
+void QuanLy::DangKiThiLaiorHocLai(){
+	string MaSV = this->NhapMaSinhVien(1);
+	nhaplai:
+	string MaMH = this->NhapMaMonHoc(1);
+
+	bool check = false;
+	for each (SinhVien item in this->DSSV)
+	{
+		if (item._Get_MSSV() == MaSV){
+			for each (Diem itemDiem in item._Get_DiemThi())
+			{
+				if (itemDiem._Get_MaMH() == MaMH){
+					check = true;
+					break;
+				}
+			}
+			break;
+		}
+	}
+
+	if (!check){
+		TextCL(4, "	[Mon Hoc Ma Sinh Vien Dang Dang Ki Khong Hop Le]\n");
+		goto nhaplai;
+	}
+	cout << "\nBan Muon ?";
+	cout << "\n0. Thoat";
+	cout << "\n1. Dang Ki Thi Lai";
+	cout << "\n2. Dang Ki Hoc Lai";
+	cout << "\nLua Chon: ";
+	int LuaChon = TryCatch(0, 2);
+	TruotMon *tm;
+	if (LuaChon == 0) return;
+	else if (LuaChon == 1){
+		tm = new TruotMon(MaSV, MaMH, ThiLai);
+	}
+	else {
+		tm = new TruotMon(MaSV, MaMH, HocLai);
+	}
+	TruotMon::FileOut.open("DS_TRUOT.txt", ios_base::app);
+	TruotMon::FileOut << endl;
+	tm->GhiVaoFile();
+	TruotMon::FileOut.close();
+}
+
+void QuanLy::DanhSachThiLaiorHocLai(){
+	
+	cout << endl;
+	for (int i = 0; i < 25; i++){ cout << "==="; } cout << "=="; int getX = whereX(); cout << endl;
+	cout << "|" << setw(7) << left;
+	TextColor(9);
+	cout << "STT";
+	TextColor(15);
+	cout << "|" << setw(30) << left;
+	TextColor(9);
+	cout << "Ten Mon Hoc";
+	TextColor(15);
+	cout << "|" << setw(30) << left;
+	TextColor(9);
+	cout << "Ten Sinh Vien";
+	TextColor(15);
+	cout << "|" << setw(5) << left;
+	TextColor(9);
+	cout << "Loai";
+	TextColor(15);
+	cout << "|";
+	TextColor(15);
+
+	cout << endl;
+	for (int i = 0; i < 25; i++){ cout << "==="; } cout << "=="; cout << endl;
 }

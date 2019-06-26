@@ -3,16 +3,20 @@
 #include "NgaySinh.h"
 #include "MonHoc.h"
 #include "Diem.h"
+#include "TruotMon.h"
+#define ThiLai 1
+#define HocLai 2
 
 class QuanLy
 {
 private:
 	vector<SinhVien> DSSV;
 	vector<MonHoc> DSMH;
+	vector<TruotMon> DSTM;
 public:
 	QuanLy();
 	~QuanLy();
-
+	
 	
 	void initDSSV();
 
@@ -45,5 +49,11 @@ public:
 	void LietKeSinhVienTruotMonTheoMonHoc();
 	void DanhSachMonHocVaSinhVien();
 	void DanhSachSinhVienDuDieuKienDatHocBong();
+
+
+	//TRUOT
+	void initTruotMon();
+	void DangKiThiLaiorHocLai();
+	void DanhSachThiLaiorHocLai();
 };
 

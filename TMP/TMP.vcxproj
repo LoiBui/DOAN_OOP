@@ -70,6 +70,7 @@
     <ClInclude Include="NgaySinh.h" />
     <ClInclude Include="QuanLy.h" />
     <ClInclude Include="SinhVien.h" />
+    <ClInclude Include="TruotMon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="console.cpp" />
@@ -79,6 +80,7 @@
     <ClCompile Include="QuanLy.cpp" />
     <ClCompile Include="SinhVien.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TruotMon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
