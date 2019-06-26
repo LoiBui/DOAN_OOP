@@ -206,9 +206,9 @@ int menu(){
 
 	gotoXY(87, 14);
 	TextCL(3, "|");
-	cout << setw(4) << left << "6";
+	cout << setw(4) << left << "18";
 	TextCL(3, "|");
-	cout << setw(23) << left << " Sua Diem Cho Sinh Vien";
+	cout << setw(23) << left << " Cap Nhat Diem Truot Mon";
 	gotoXY(119, 14); TextCL(3, "|");
 	gotoXY(87, 15); for (int i = 0; i < 33; i++) { TextCL(3, "="); }
 

@@ -6,7 +6,7 @@ class TruotMon
 {
 private:
 	string MaSV, MaMH;
-	int type;
+	int type, trangthai;
 public:
 	TruotMon();
 	~TruotMon();
@@ -18,5 +18,9 @@ public:
 	void GhiVaoFile();
 	string GetTenMonHoc();
 	string GetTenSinhVien();
+
+	string GetMSSV();
+	int GetType();
+	int GetTrangThai();
 };
 

@@ -5,6 +5,7 @@ ofstream TruotMon::FileOut;
 
 TruotMon::TruotMon()
 {
+	this->trangthai = 0;
 }
 
 
@@ -17,10 +18,11 @@ TruotMon::TruotMon(string MaSV, string MaMH, int type){
 	this->MaSV = MaSV;
 	this->MaMH = MaMH;
 	this->type = type;
+	this->trangthai = 0;
 }
 
 void TruotMon::GhiVaoFile(){
-	string tm = MaSV + "|" + MaMH + "|" + to_string(type);
+	string tm = MaSV + "|" + MaMH + "|" + to_string(type) + " " + to_string(this->trangthai);
 	TruotMon::FileOut << tm;
 }
 
@@ -61,4 +63,16 @@ string TruotMon::GetTenSinhVien(){
 	SinhVien::FileIn.open("DS_SINHVIEN.txt", ios_base::in);
 
 	return "Sinh Vien Nay Da Bi Xoa";
+}
+
+string TruotMon::GetMSSV(){
+	return this->MaSV;
+}
+
+int TruotMon::GetType(){
+	return this->type;
+}
+
+int TruotMon::GetTrangThai(){
+	return this->trangthai;
 }
