@@ -53,7 +53,9 @@ public:
 
 	//TRUOT
 	void initTruotMon();
+	void _GhiTruotMonVaoFile();
 	void DangKiThiLaiorHocLai();
 	void DanhSachThiLaiorHocLai();
+	void CapNhatDiemTruotMon();
 };
 

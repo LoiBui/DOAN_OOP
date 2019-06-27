@@ -971,20 +971,39 @@ void QuanLy::initTruotMon(){
 	{
 		string MaSV, MaMH;
 		int type, trangthai;
+		float dqt, dkt;
 
 		getline(TruotMon::FileIn, MaSV, '|');
 		getline(TruotMon::FileIn, MaMH, '|');
 		TruotMon::FileIn >> type;
 		TruotMon::FileIn >> trangthai;
+		TruotMon::FileIn >> dqt;
+		TruotMon::FileIn >> dkt;
 		string s;
 		getline(TruotMon::FileIn, s);
 
-		TruotMon tm(MaSV, MaMH, type);
+		TruotMon tm(MaSV, MaMH, type, dqt, dkt, trangthai);
 		this->DSTM.push_back(tm);
 	}
 
 }
 
+
+void QuanLy::_GhiTruotMonVaoFile(){
+	TruotMon::FileOut.open("DS_TRUOT.txt", ios_base::out);
+	bool index = true;
+	for each (TruotMon item in DSTM)
+	{
+		if (index){
+			index = false;
+		}
+		else{
+			TruotMon::FileOut << endl;
+		}
+		item.GhiVaoFile();
+	}
+	TruotMon::FileOut.close();
+}
 void QuanLy::DangKiThiLaiorHocLai(){
 	string MaSV = this->NhapMaSinhVien(1);
 	nhaplai:
@@ -992,18 +1011,31 @@ void QuanLy::DangKiThiLaiorHocLai(){
 
 	bool check = false;
 	float diemqt;
+	Diem svhientai;
 	for each (SinhVien item in this->DSSV)
 	{
 		if (item._Get_MSSV() == MaSV){
+			
 			for each (Diem itemDiem in item._Get_DiemThi())
 			{
 				if (itemDiem._Get_MaMH() == MaMH){
 					check = true;
 					diemqt = itemDiem._Get_DiemQT();
+					svhientai = itemDiem;
 					break;
 				}
 			}
 			break;
+		}
+	}
+
+	for each (TruotMon item in this->DSTM)
+	{
+		if (item.GetMSSV() == MaSV){
+			if (item.GetMaMH() == MaMH && item.GetTrangThai() == 0){
+				check = false;
+				break;
+			}
 		}
 	}
 
@@ -1025,10 +1057,10 @@ void QuanLy::DangKiThiLaiorHocLai(){
 	TruotMon *tm;
 	if (LuaChon == 0) return;
 	else if (LuaChon == 1){
-		tm = new TruotMon(MaSV, MaMH, ThiLai);
+		tm = new TruotMon(MaSV, MaMH, ThiLai, svhientai._Get_DiemQT(), 0, 0);
 	}
 	else {
-		tm = new TruotMon(MaSV, MaMH, HocLai);
+		tm = new TruotMon(MaSV, MaMH, HocLai, 0, 0, 0);
 	}
 	TruotMon::FileOut.open("DS_TRUOT.txt", ios_base::app);
 	TruotMon::FileOut << endl;
@@ -1040,7 +1072,8 @@ void QuanLy::DangKiThiLaiorHocLai(){
 void QuanLy::DanhSachThiLaiorHocLai(){
 	
 	cout << endl;
-	for (int i = 0; i < 27; i++){ cout << "==="; } cout << "="; int getX = whereX(); cout << endl;
+	TextCL(31, "DANH SACH DANG DANG KI\n");
+	for (int i = 0; i < 29; i++){ cout << "==="; } cout << "="; int getX = whereX(); cout << endl;
 	cout << "|" << setw(3) << left;
 	TextColor(9);
 	cout << "STT";
@@ -1061,11 +1094,15 @@ void QuanLy::DanhSachThiLaiorHocLai(){
 	TextColor(9);
 	cout << "Loai";
 	TextColor(15);
+	cout << "|" << setw(5) << left;
+	TextColor(9);
+	cout << "DQT";
+	TextColor(15);
 	cout << "|";
 	TextColor(15);
 
 	cout << endl;
-	for (int i = 0; i < 27; i++){ cout << "==="; } cout << "="; cout << endl;
+	for (int i = 0; i < 29; i++){ cout << "==="; } cout << "="; cout << endl;
 
 	int index = 1;
 	for each (TruotMon item in this->DSTM)
@@ -1080,9 +1117,80 @@ void QuanLy::DanhSachThiLaiorHocLai(){
 			else{
 				cout << "Hoc Lai";
 			}
+			cout << "|" << setw(5) << left;
+			if (item.GetType() == ThiLai){
+				cout << item.GetDQT();
+			}
+			else{
+				cout << " ";
+			}
+			
 			cout << "|" << endl;
 		}
 		
 	}
-	for (int i = 0; i < 27; i++){ cout << "==="; } cout << "="; cout << endl;
+	for (int i = 0; i < 29; i++){ cout << "==="; } cout << "="; cout << "\n\n\n";
+
+	TextCL(31, "DANH SACH DA THI XONG"); cout << "\n";
+
+	for (int i = 0; i < 31; i++){ cout << "==="; } cout << "="; cout << endl;
+	cout << "|" << setw(3) << left;
+	TextColor(9);
+	cout << "STT";
+	TextColor(15);
+	cout << "|" << setw(8) << left;
+	TextColor(9);
+	cout << "MSSV";
+	TextColor(15);
+	cout << "|" << setw(28) << left;
+	TextColor(9);
+	cout << "Ten Sinh Vien";
+	TextColor(15);
+	cout << "|" << setw(28) << left;
+	TextColor(9);
+	cout << "Ten Mon Hoc";
+	TextColor(15);
+	cout << "|" << setw(9) << left;
+	TextColor(9);
+	cout << "Loai";
+	TextColor(15);
+	cout << "|" << setw(5) << left;
+	TextColor(9);
+	cout << "DQT";
+	TextColor(15);
+	cout << "|" << setw(5) << left;
+	TextColor(9);
+	cout << "DKT";
+	TextColor(15);
+	cout << "|";
+	TextColor(15);
+
+	cout << endl;
+	for (int i = 0; i < 31; i++){ cout << "==="; } cout << "="; cout << endl;
+
+	index = 1;
+	for each (TruotMon item in this->DSTM)
+	{
+		if (item.GetTrangThai() == 1){
+			cout << "|" << setw(3) << left << index++ << "|" << setw(8) << left << item.GetMSSV() << "|" << setw(28) << left << CatString(item.GetTenSinhVien(), 25) << "|" << setw(28) << left;
+
+			cout << CatString(item.GetTenMonHoc(), 25) << "|" << setw(9) << left;
+			if (item.GetType() == ThiLai){
+				cout << "Thi Lai";
+			}
+			else{
+				cout << "Hoc Lai";
+			}
+			cout << "|" << setw(5) << left << item.GetDQT();
+			cout << "|" << setw(5) << left << item.GetDKT();
+
+			cout << "|" << endl;
+		}
+
+	}
+	for (int i = 0; i < 31; i++){ cout << "==="; } cout << "="; cout << endl;
+}
+
+void QuanLy::CapNhatDiemTruotMon(){
+
 }

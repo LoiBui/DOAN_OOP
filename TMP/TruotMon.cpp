@@ -14,15 +14,17 @@ TruotMon::~TruotMon()
 }
 
 
-TruotMon::TruotMon(string MaSV, string MaMH, int type){
+TruotMon::TruotMon(string MaSV, string MaMH, int type, float DQT, float DKT, int trangthai){
 	this->MaSV = MaSV;
 	this->MaMH = MaMH;
 	this->type = type;
-	this->trangthai = 0;
+	this->DQT = DQT;
+	this->DKT = DKT;
+	this->trangthai = trangthai;
 }
 
 void TruotMon::GhiVaoFile(){
-	string tm = MaSV + "|" + MaMH + "|" + to_string(type) + " " + to_string(this->trangthai);
+	string tm = MaSV + "|" + MaMH + "|" + to_string(type) + " " + to_string(this->trangthai) + " " + to_string(this->DQT) + " " + to_string(this->DKT);
 	TruotMon::FileOut << tm;
 }
 
@@ -75,4 +77,16 @@ int TruotMon::GetType(){
 
 int TruotMon::GetTrangThai(){
 	return this->trangthai;
+}
+
+string TruotMon::GetMaMH(){
+	return this->MaMH;
+}
+
+float TruotMon::GetDKT(){
+	return this->DKT;
+}
+
+float TruotMon::GetDQT(){
+	return this->DQT;
 }
