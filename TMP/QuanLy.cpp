@@ -1192,6 +1192,7 @@ void QuanLy::DanhSachThiLaiorHocLai(){
 }
 
 void QuanLy::CapNhatDiemTruotMon(){
+	
 	string MaSV = this->NhapMaSinhVien(1);
 	
 	
@@ -1223,10 +1224,10 @@ void QuanLy::CapNhatDiemTruotMon(){
 		goto nhapl;
 	}
 
-
+	
 	for (int i = 0; i < this->DSTM.size(); i++)
 	{
-		if (MaSV == this->DSTM[i].GetMSSV() && MaMH == this->DSTM[i].GetMaMH()){
+		if (MaSV == this->DSTM[i].GetMSSV() && MaMH == this->DSTM[i].GetMaMH() && this->DSTM[i].GetTrangThai() == 0){
 			float dqt = 0, dkt = 0;
 			
 			if (this->DSTM[i].GetType() == HocLai){
@@ -1250,12 +1251,13 @@ void QuanLy::CapNhatDiemTruotMon(){
 				if (this->DSSV[h]._Get_MSSV() == MaSV){
 					this->DSSV[h].SuaDiemTruotMon(MaMH, this->DSTM[i].GetType(), dqt, dkt);
 					this->_GhiSinhVienVaoFile();
+					
 					break;
 				}
 			}
 			break;
 		}
 	}
-	
-	gotoXY(whereX(), whereY());
+	system("cls");
+	ThongBao("Cap Nhat Thanh Cong", 1);
 }

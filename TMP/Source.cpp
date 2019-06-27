@@ -317,18 +317,18 @@ tieptuc:
 		break;
 
 	case 10:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		for (int i = 0; i < 20; i++) if (i == 10) TextCL(63, "XEM DIEM THEO LOP HOC"); else TextCL(63, "-----"); TextCL(63, "----"); cout << endl;
 		cout << "HUONG DAN: ";
-		cout << "\n	+Nhap MSSV cua SinhVien can them.";
-		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		cout << "\n	+Nhap MaLopHoc.";
+		TextCL(4, "\n	+MaLopHoc phai khong ton tai trong Du Lieu\n\n");
 		ql.XemDiemTheoMonHoc();
 		break;
 
 	case 11:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		for (int i = 0; i < 20; i++) if (i == 13) TextCL(63, "XEM DIEM THEO LOP HOC"); else TextCL(63, "----"); TextCL(63, "-----"); cout << endl;
 		cout << "HUONG DAN: ";
-		cout << "\n	+Nhap MSSV cua SinhVien can them.";
-		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		cout << "\n	+Nhap MaMH can xem.";
+		TextCL(4, "\n	+MaMH phai khong ton tai trong Du Lieu\n\n");
 		ql.XemDiemTheoLopHoc();
 		break;
 
@@ -341,23 +341,20 @@ tieptuc:
 		break;
 
 	case 13:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "LIET KE SINH VIEN TRUOT MON"); else TextCL(63, "----"); TextCL(63, "-------------"); cout << endl;
 		cout << "HUONG DAN: ";
-		cout << "\n	+Nhap MSSV cua SinhVien can them.";
-		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		cout << "\n	+Nhap MaMH de liet ke.";
+		TextCL(4, "\n	+MaMH phai khong ton tai trong Du Lieu\n\n");
 		ql.LietKeSinhVienTruotMonTheoMonHoc();
 		break;
 
 	case 14:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
-		cout << "HUONG DAN: ";
-		cout << "\n	+Nhap MSSV cua SinhVien can them.";
-		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "DANH SACH"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
 		ql.DanhSachMonHocVaSinhVien();
 		break;
 
 	case 15:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		for (int i = 0; i < 15; i++) if (i == 10) TextCL(63, "DANH SACH SINH VIEN DU DIEU KIEN DAT HOC BONG"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
 		TextCL(9, "\nDieu Kien Dat Hoc Bong: ");
 		cout << "\n+ So Tin Chi Phai Tren 15 Tin Chi";
 		cout << "\n+ Diem Trung Binh Mon Phai Lon Hon D+";
@@ -366,15 +363,16 @@ tieptuc:
 		break;
 
 	case 16:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		for (int i = 0; i < 19; i++) if (i == 10) TextCL(63, "DANG KI THI LAI HOAC HOC LAI"); else TextCL(63, "-----"); TextCL(63, "--"); cout << endl;
 		cout << "HUONG DAN: ";
-		cout << "\n	+Nhap MSSV cua SinhVien can them.";
-		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		cout << "\n	+Nhap MSSV cua SinhVien can Dang Ki.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu");
+		TextCL(4, "\n	+MaMH phai khong ton tai trong Du Lieu\n\n");
 		ql.DangKiThiLaiorHocLai();
 		break;
 
 	case 17:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		for (int i = 0; i < 19; i++) if (i == 10) TextCL(63, "DANH SACH THI LAI HOAC HOC LAI"); else TextCL(63, "-----"); TextCL(63, ""); cout << endl;
 		cout << "HUONG DAN: ";
 		cout << "\n	+Nhap MSSV cua SinhVien can them.";
 		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
@@ -382,7 +380,7 @@ tieptuc:
 		break;
 
 	case 18:
-		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		for (int i = 0; i < 18; i++) if (i == 10) TextCL(63, "CAP NHAT DIEM THI LAI HOA HOC LAI"); else TextCL(63, "-----"); TextCL(63, "--"); cout << endl;
 		cout << "HUONG DAN: ";
 		cout << "\n	+Nhap MSSV cua SinhVien can them.";
 		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");

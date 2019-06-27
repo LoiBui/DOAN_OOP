@@ -1,12 +1,11 @@
-StartSV|142861|BUI CONG LOI|61PM98|12/12/1999|StartDiem|TRR|9.5|6.6|LTDT|9|8.6|Automat|10|9|VXL1|8.5|6|VXL2|10|4|THTH1|9|9|EndDiem|EndSV
-StartSV|34213|TU QUOC KHANH|61PM4|1/1/1998|StartDiem|TRR|5|1|VXL|4|5|LTDT|3|3|EndDiem|EndSV
-StartSV|1|Nguyen Tho A|61PM2|11/11/1990|StartDiem|Automat|10|9.5|TRR|8|8.7|EndDiem|EndSV
+StartSV|142861|BUI CONG LOI|61PM1|12/12/1999|StartDiem|TRR|9.5|6.6|LTDT|9|8.6|Automat|10|9|VXL1|8.5|6|VXL2|10|4|THTH1|9|9|EndDiem|EndSV
+StartSV|34213|Pham Vinh Nam|61PM4|1/1/1998|StartDiem|TRR|7.7|9|VXL|4|5|LTDT|3|3|EndDiem|EndSV
+StartSV|1|Nguyen Tho A|61PM2|11/11/1990|StartDiem|Automat|10|9.5|TRR|8|8.7|VXL1|8.5|6|VXL2|10|4|THTH1|9|9|LTHT|9|9|EndDiem|EndSV
 StartSV|TEST12|LOI TEST|61PM1|24/11/1998|EndSV
 StartSV|732864|Bui Van Nam|60PM2|7/5/1997|StartDiem|TRR|6.5|7|EndDiem|EndSV
-StartSV|1061|Nguyen Van An|61PM1|25/8/1998|StartDiem|TRR|7|8|p|5|9|EndDiem|EndSV
-StartSV|142860|Bui Cong Loi|61PM1|24/11/1998|StartDiem|TRR|9.5|3.6|LTDT|10|9|EndDiem|EndSV
+StartSV|1061|Nguyen Van An|61PM1|25/8/1998|StartDiem|TRR|7|9|p|5|9|EndDiem|EndSV
 StartSV|261343|Nguyen Tho A|61PM2|11/11/1990|EndSV
-StartSV|732864|Bui Van Nam|60PM2|7/5/1997|StartDiem|TRR|6.5|7|EndDiem|EndSV
+StartSV|732864|Bui Van Nam|61PM1|7/5/1997|StartDiem|TRR|6.5|7|EndDiem|EndSV
 StartSV|1062|Nguyen Van An1|61PM3|25/8/1998|EndSV
 StartSV|fsafas|fsafsafsafas|fasfas|1/1/1999|StartDiem|TRR|1|2|EndDiem|EndSV
 StartSV|EWQE|EWQEWQ EEWQ EQWE|EWQE|1/1/1999|StartDiem|TRR|8|9|EndDiem|EndSV
