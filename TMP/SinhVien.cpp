@@ -200,14 +200,14 @@ void SinhVien::SuaDiem(){
 			if (lc == 1 || lc == 3){
 				cout << "Nhap DiemQT: ";
 				float dqt;
-				cin >> dqt;
+				dqt = TryCatch1(0, 10);;
 				this->DiemThi[i]._Set_DiemQT(dqt);
 			}
 
 			if (lc == 2 || lc == 3){
 				cout << "Nhap DiemKT: ";
 				float dkt;
-				cin >> dkt;
+				dkt = TryCatch1(0, 10);;
 				this->DiemThi[i]._Set_DiemKT(dkt);
 			}
 
@@ -223,6 +223,42 @@ void SinhVien::SuaDiem(){
 	string con = DOWHILEYESNO("\nBan co muon sua tiep Diem cho Sinh Vien Nay Khong ? (y/n): ");
 	if (con == "y" || con == "Y"){
 		goto tieptucsua;
+	}
+}
+
+
+void SinhVien::SuaDiemTruotMon(string MaMH, int type, float DQT, float DKT){
+	gotoXY(0, 2); cout << " --------------------------------";
+	gotoXY(0, 3); cout << "| Ho Ten: " << TenSV; gotoXY(33, 3); cout << "|";
+	gotoXY(0, 4); cout << "| MSSV: " << MSSV; gotoXY(33, 4); cout << "|";
+	gotoXY(0, 5); cout << "| Lop: " << Lop; gotoXY(33, 5); cout << "|";
+	gotoXY(0, 6); cout << "| NgaySinh: " << NgaySinh; gotoXY(33, 6); cout << "|";
+	gotoXY(0, 7); cout << " --------------------------------";
+
+	Diem diem;
+	bool check = true;
+	int index = 0;
+	for each (Diem item in this->DiemThi)
+	{
+		if (item._Get_MaMH() == MaMH){
+			diem = item;
+			check = false;
+			index++;
+			break;
+		}
+	}
+	if (check){
+		TextCL(4, "\n	[Khong The Sua Diem Do Mon Hoc Cua Sinh Vien Nay Da Bi Xoa]");
+	}
+	if (type == ThiLai || type == HocLai){
+		if (diem._Get_DiemKT() < DKT){
+			this->DiemThi[index - 1]._Set_DiemKT(DKT);
+		}
+	}
+	if (type == HocLai){
+		if (diem._Get_DiemQT() < DQT){
+			this->DiemThi[index - 1]._Set_DiemQT(DQT);
+		}
 	}
 }
 

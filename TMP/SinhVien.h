@@ -25,6 +25,7 @@ public:
 	void GhiSinhVienVaoFile();
 	void NhapDiem();
 	void SuaDiem();
+	void SuaDiemTruotMon(string, int, float, float);
 	void XoaDiem();
 
 	string _Get_MSSV();

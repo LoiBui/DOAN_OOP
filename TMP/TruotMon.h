@@ -26,5 +26,9 @@ public:
 	int GetTrangThai();
 	float GetDQT();
 	float GetDKT();
+
+	void SetDQT(float);
+	void SetDKT(float);
+	void SetTrangThai(int);
 };
 

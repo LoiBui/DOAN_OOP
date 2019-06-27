@@ -4,8 +4,7 @@
 #include "MonHoc.h"
 #include "Diem.h"
 #include "TruotMon.h"
-#define ThiLai 1
-#define HocLai 2
+
 
 class QuanLy
 {

@@ -8,6 +8,8 @@
 #include <iomanip>
 #include <fstream>
 #define MauChu 9
+#define ThiLai 1
+#define HocLai 2
 using namespace std;
 
 

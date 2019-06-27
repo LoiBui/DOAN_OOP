@@ -380,6 +380,14 @@ tieptuc:
 		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
 		ql.DanhSachThiLaiorHocLai();
 		break;
+
+	case 18:
+		for (int i = 0; i < 21; i++) if (i == 10) TextCL(63, "SUA 1 SINH VIEN"); else TextCL(63, "-----"); TextCL(63, "-----"); cout << endl;
+		cout << "HUONG DAN: ";
+		cout << "\n	+Nhap MSSV cua SinhVien can them.";
+		TextCL(4, "\n	+MaSV phai khong ton tai trong Du Lieu\n\n");
+		ql.CapNhatDiemTruotMon();
+		break;
 	default:
 		break;
 	}

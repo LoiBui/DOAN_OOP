@@ -1192,5 +1192,70 @@ void QuanLy::DanhSachThiLaiorHocLai(){
 }
 
 void QuanLy::CapNhatDiemTruotMon(){
+	string MaSV = this->NhapMaSinhVien(1);
+	
+	
+	vector<string> arrMaMH;
+	for each (TruotMon item in this->DSTM)
+	{
+		if (MaSV == item.GetMSSV() && item.GetTrangThai() == 0){
+			arrMaMH.push_back(item.GetMaMH());
+		}
+	}
 
+	if (arrMaMH.size() == 0){
+		TextCL(4, "	[Sinh Vien Nay Khong Co Trong Danh Sach Truot Mon]\n");
+		return;
+	}
+	nhapl:
+	bool check = false;
+	string MaMH = this->NhapMaMonHoc(1);
+	for each (string item in arrMaMH)
+	{
+		if (MaMH == item){
+			check = true;
+			break;
+		}
+	}
+
+	if (!check){
+		TextCL(4, "	[MaMH Khong Ton Tai Trong Danh Sach Dang Ki Truot Mon Cua Sinh Vien Nay]\n");
+		goto nhapl;
+	}
+
+
+	for (int i = 0; i < this->DSTM.size(); i++)
+	{
+		if (MaSV == this->DSTM[i].GetMSSV() && MaMH == this->DSTM[i].GetMaMH()){
+			float dqt = 0, dkt = 0;
+			
+			if (this->DSTM[i].GetType() == HocLai){
+				cout << "\nNhap DiemQT Cho Sinh Vien: ";
+				dqt = TryCatch1(0, 10);
+				this->DSTM[i].SetDQT(dqt);
+				
+			}
+			if (this->DSTM[i].GetType() == ThiLai || this->DSTM[i].GetType() == HocLai){
+				cout << "\nNhap DiemKT Cho Sinh Vien: ";
+				dkt = TryCatch1(0, 10);
+				this->DSTM[i].SetDKT(dkt);
+				this->DSTM[i].SetTrangThai(1);
+				
+			}
+			//CẬP NHẬT TRONG FILE DS_TRƯỢT MÔN
+			this->_GhiTruotMonVaoFile();
+
+			for (int h = 0; h < this->DSSV.size(); h++)
+			{
+				if (this->DSSV[h]._Get_MSSV() == MaSV){
+					this->DSSV[h].SuaDiemTruotMon(MaMH, this->DSTM[i].GetType(), dqt, dkt);
+					this->_GhiSinhVienVaoFile();
+					break;
+				}
+			}
+			break;
+		}
+	}
+	
+	gotoXY(whereX(), whereY());
 }

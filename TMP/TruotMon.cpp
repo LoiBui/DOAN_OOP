@@ -90,3 +90,15 @@ float TruotMon::GetDKT(){
 float TruotMon::GetDQT(){
 	return this->DQT;
 }
+
+void TruotMon::SetDKT(float dkt){
+	this->DKT = dkt;
+}
+
+void TruotMon::SetDQT(float dqt){
+	this->DQT = dqt;
+}
+
+void TruotMon::SetTrangThai(int tt){
+	this->trangthai = tt;
+}
