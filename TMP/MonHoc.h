@@ -11,8 +11,8 @@ public:
 	~MonHoc();
 	static ifstream FileIn;
 	static ofstream FileOut;
-	friend istream &operator >> (istream &, MonHoc &);
-	friend ostream &operator << (ostream &, MonHoc);
+	void NhapMonHoc();
+	void XuatMonHoc();
 	void GhiMonHocVaoFile();
 
 	/////Get-Set///////

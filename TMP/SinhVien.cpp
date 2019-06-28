@@ -66,7 +66,7 @@ void SinhVien::NhapDiem(){
 	while (true)
 	{
 		Diem d;
-		cin >> d;
+		d.NhapDiem();
 
 		//check tồn tại của môn học
 		bool check = true;
@@ -97,27 +97,24 @@ void SinhVien::NhapDiem(){
 	this->DiemThi = temp;
 }
 
-istream &operator >> (istream &i, SinhVien &sv){
+void SinhVien::NhapSinhVien(){
 	
 	fflush(stdin);
 	cout << "Nhap vao TenSV: ";
-	sv.TenSV = DOWHILE1(8, 18, "=>Ho Ten khong duoc qua dai hoac qua ngan (8->18)");
+	TenSV = DOWHILE1(8, 18, "=>Ho Ten khong duoc qua dai hoac qua ngan (8->18)");
 
 	fflush(stdin);
 	cout << "Nhap vao Lop: ";
-	sv.Lop = DOWHILE1(1, 6, "=>Ten Lop khong duoc qua dai hoac qua ngan(1->6)");
+	Lop = DOWHILE1(1, 6, "=>Ten Lop khong duoc qua dai hoac qua ngan(1->6)");
 
 	cout << "~Nhap Ngay Sinh~" << endl;
-	cin >> sv.NgaySinh;
+	cin >> NgaySinh;
 
 	string LuaChon = DOWHILEYESNO("\nThem luon DIEM cho sinh vien nay ? (y/n): ");
 	if (LuaChon == "y" || LuaChon == "Y"){
 
-		sv.NhapDiem();
+		NhapDiem();
 	}
-
-	
-	return i;
 }
 
 void SinhVien::SuaDiem(){

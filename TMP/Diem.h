@@ -11,8 +11,8 @@ public:
 	Diem(string, float, float);
 	~Diem();
 
-	friend istream &operator >> (istream &, Diem &);
-	friend ostream &operator << (ostream &, Diem);
+	void NhapDiem();
+	void XuatDiem();
 
 	float TinhDiemHe4();
 	string TinhDiemChu();

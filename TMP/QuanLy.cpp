@@ -96,7 +96,7 @@ void QuanLy::XoaMonHoc(){
 void QuanLy::ThemMonHoc(){
 	string MaMH = this->NhapMaMonHoc(0);
 	MonHoc mh;
-	cin >> mh;
+	mh.NhapMonHoc();
 	mh._Set_MaMH(MaMH);
 	
 	this->DSMH.push_back(mh);
@@ -213,7 +213,7 @@ void QuanLy::ThemSinhVien(){
 	}
 
 	SinhVien sv;
-	cin >> sv;
+	sv.NhapSinhVien();
 	sv._Set_MSSV(MaSV);
 
 	this->DSSV.push_back(sv);

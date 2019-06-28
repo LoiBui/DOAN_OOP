@@ -14,7 +14,7 @@ Diem::~Diem()
 {
 }
 
-istream &operator >> (istream &i, Diem &d){
+void Diem::NhapDiem(){
 	bool check;
 	cout << "\nNhap vao MaMH: ";
 	while (true)
@@ -23,7 +23,7 @@ istream &operator >> (istream &i, Diem &d){
 		fflush(stdin);
 		
 		TextColor(MauChu);
-		getline(cin, d.MaMH);
+		getline(cin, MaMH);
 		TextColor(7);
 
 		MonHoc::FileIn.close();
@@ -31,7 +31,7 @@ istream &operator >> (istream &i, Diem &d){
 		while (!MonHoc::FileIn.eof()){
 			string s;
 			getline(MonHoc::FileIn, s, '|');
-			if (d.MaMH == s){
+			if (MaMH == s){
 				check = true;
 				getline(MonHoc::FileIn, s, '|');
 				cout << "==>Ten Mon Hoc: ";
@@ -55,24 +55,22 @@ istream &operator >> (istream &i, Diem &d){
 	cout << "Nhap vao DiemQT: ";
 	
 	TextColor(MauChu);
-	d.DiemQT = TryCatch1(0, 10);
+	DiemQT = TryCatch1(0, 10);
 	TextColor(7);
 
 	cout << "Nhap vao DiemKT: ";
 	TextColor(MauChu);
-	d.DiemKT = TryCatch1(0, 10);
+	DiemKT = TryCatch1(0, 10);
 	TextColor(7);
 	
 
-	return i;
 }
 
 
-ostream &operator << (ostream &o, Diem d){
-	cout << "\nMaMH: " << d.MaMH;
-	cout << "   Diem QT: " << d.DiemQT;
-	cout << "   Diem KT: " << d.DiemKT;
-	return o;
+void Diem::XuatDiem(){
+	cout << "\nMaMH: " << MaMH;
+	cout << "   Diem QT: " << DiemQT;
+	cout << "   Diem KT: " << DiemKT;
 }
 
 float Diem::TinhDiemHe4(){

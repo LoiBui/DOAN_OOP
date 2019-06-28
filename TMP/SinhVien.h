@@ -19,8 +19,8 @@ public:
 	static ifstream FileIn;
 	static ofstream FileOut;
 
-	friend istream &operator >> (istream &, SinhVien &);
-	friend ostream &operator << (ostream &, SinhVien);
+	void NhapSinhVien();
+	void XuatSinhVien();
 
 	void GhiSinhVienVaoFile();
 	void NhapDiem();

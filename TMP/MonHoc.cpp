@@ -16,23 +16,20 @@ MonHoc::~MonHoc()
 ifstream MonHoc::FileIn;
 ofstream MonHoc::FileOut;
 
-istream &operator >> (istream &i, MonHoc &mh)
+void MonHoc::NhapMonHoc()
 {
 	cout << "Nhap TenMonHoc: ";
-	mh.TenMH = DOWHILE1(5, 40, "Do Dai 'TenMonHoc' Trong Khoang(1->40)");
+	TenMH = DOWHILE1(5, 40, "Do Dai 'TenMonHoc' Trong Khoang(1->40)");
 
 	cout << "Nhap SoTinChi: ";
-	mh.SoTinChi = TryCatch(0, 10);
-
-	return i;
+	SoTinChi = TryCatch(0, 10);
 }
 
-ostream &operator << (ostream &o, MonHoc mh)
+void MonHoc::XuatMonHoc()
 {
-	cout << "Ma Mon Hoc: " << mh.MaMH;
-	cout << "\nTen Mon Hoc: " << mh.TenMH;
-	cout << "\nSo Tin Chi: " << mh.SoTinChi;
-	return o;
+	cout << "Ma Mon Hoc: " << MaMH;
+	cout << "\nTen Mon Hoc: " << TenMH;
+	cout << "\nSo Tin Chi: " << SoTinChi;
 }
 
 void MonHoc::GhiMonHocVaoFile(){
