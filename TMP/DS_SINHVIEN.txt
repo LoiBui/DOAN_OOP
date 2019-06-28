@@ -11,4 +11,5 @@ StartSV|fsafas|fsafsafsafas|fasfas|1/1/1999|StartDiem|TRR|1|2|EndDiem|EndSV
 StartSV|EWQE|EWQEWQ EEWQ EQWE|EWQE|1/1/1999|StartDiem|TRR|8|9|EndDiem|EndSV
 StartSV|dsadsa|dsad asdsadas|dsa|1/1/1998|StartDiem|TRR|9|0|EndDiem|EndSV
 StartSV|321321|sad dsa das|23|1/1/1999|StartDiem|TRR|8|9|EndDiem|EndSV
-StartSV|312412|LOI BUI CONG|32|1/1/1999|StartDiem|TRR|8.9|9|EndDiem|EndSV
+StartSV|312412|LOI BUI CONG|32|1/1/1999|StartDiem|TRR|8.9|10|EndDiem|EndSV
+StartSV|321443|Nguyen Cong Chu 1|61PM3|1/1/1999|EndSV

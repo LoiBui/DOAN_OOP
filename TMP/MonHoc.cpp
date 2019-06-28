@@ -22,7 +22,7 @@ istream &operator >> (istream &i, MonHoc &mh)
 	mh.TenMH = DOWHILE1(5, 40, "Do Dai 'TenMonHoc' Trong Khoang(1->40)");
 
 	cout << "Nhap SoTinChi: ";
-	mh.SoTinChi = TryCatch(0, 5);
+	mh.SoTinChi = TryCatch(0, 10);
 
 	return i;
 }

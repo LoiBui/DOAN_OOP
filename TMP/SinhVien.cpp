@@ -196,7 +196,7 @@ void SinhVien::SuaDiem(){
 			cout << "\n2. Diem Kiem Tra";
 			cout << "\n3. Ca Hai";
 			cout << "\nLua Chon: ";
-			int lc = DOWHILE2(1, 3, "Lua chon khong hop le, Xin Kiem Tra Lai.");
+			int lc = TryCatch(1, 3);
 			if (lc == 1 || lc == 3){
 				cout << "Nhap DiemQT: ";
 				float dqt;

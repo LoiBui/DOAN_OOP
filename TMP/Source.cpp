@@ -214,7 +214,7 @@ int menu(){
 
 
 	cout << "\n\n\n\nLua Chon: ";
-	int choose = TryCatch(0, 20);
+	int choose = TryCatch(0, 18);
 
 	NoType(false); gotoXY(0, 17);
 	for (int i = 0; i < 15; i++)

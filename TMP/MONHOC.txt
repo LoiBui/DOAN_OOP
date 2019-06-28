@@ -8,3 +8,4 @@ VXL2|Vi Xu Ly 2|2
 THTH1|Thuc Hanh Tin Hoc 1|3
 THTH2|Thuc Hanh Tin Hoc 2|2
 LTHT|Lap Trinh He Thong|2
+CSDLNC|Co So Du Lieu Nang Cao|2
